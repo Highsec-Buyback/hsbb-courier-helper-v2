@@ -180,7 +180,7 @@ export const handler: SQSHandler = async (event) => {
 };
 
 const mainlandService = axios.create({
-    baseURL: `https://mtmi7a56xd.execute-api.us-east-1.amazonaws.com/prod`
+    baseURL: `https://bl8q6dawb3.execute-api.us-east-1.amazonaws.com/prod`
 });
 
 type AnyResult =
