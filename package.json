@@ -1,0 +1,35 @@
+{
+  "name": "hsbb-courier-helper-v2",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "sst start",
+    "build": "sst build",
+    "deploy": "AWS_PROFILE=eve-tools sst deploy",
+    "remove": "sst remove",
+    "console": "sst console",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@serverless-stack/cli": "1.18.4",
+    "@serverless-stack/resources": "1.18.4",
+    "@tsconfig/node16": "1.0.3",
+    "aws-cdk-lib": "2.50.0",
+    "typescript": "4.9.4",
+    "vitest": "0.28.3"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "3.259.0",
+    "@aws-sdk/client-s3": "3.262.0",
+    "@aws-sdk/client-sqs": "3.259.0",
+    "@aws-sdk/lib-dynamodb": "3.259.0",
+    "@serverless-stack/node": "1.18.4",
+    "axios": "1.2.6",
+    "axios-retry": "3.5.1",
+    "discord-interactions": "3.3.0",
+    "ulid": "2.3.0"
+  },
+  "workspaces": [
+    "services"
+  ]
+}
