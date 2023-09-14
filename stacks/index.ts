@@ -1,4 +1,4 @@
-import { MyStack } from "./MyStack";
+import { Stack } from "./Stack";
 import { App } from "@serverless-stack/resources";
 
 export default function (app: App) {
@@ -9,5 +9,5 @@ export default function (app: App) {
       format: "esm",
     },
   });
-  app.stack(MyStack, { stackName: `MyStack${process.env.SUFFIX ?? ''}`});
+  app.stack(Stack, { stackName: `hsbb-courier-helper-v2-$stage`});
 }

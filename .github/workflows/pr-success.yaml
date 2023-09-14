@@ -29,9 +29,8 @@ jobs:
           aws-region: us-east-1
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
       - name: Deploy
-        run: npm run deploy -- --stage dev
+        run: npm run deploy -- --stage pr${{ github.event.pull_request.number }}
         env:
-          SUFFIX: -pr${{ github.event.pull_request.number }}
           AUTH_API: ${{ secrets.AUTH_API }}
           AUTH_APP: ${{ secrets.AUTH_APP }}
           DISCORD_APPLICATION_ID: ${{ secrets.DISCORD_APPLICATION_ID }}

@@ -31,7 +31,7 @@ jobs:
           aws-region: us-east-1
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
       - name: Deploy
-        run: npm run deploy -- --stage dev
+        run: npm run deploy -- --stage prod
         env:
           AUTH_API: ${{ secrets.AUTH_API }}
           AUTH_APP: ${{ secrets.AUTH_APP }}
