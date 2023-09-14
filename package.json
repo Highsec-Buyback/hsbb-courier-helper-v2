@@ -5,7 +5,7 @@
   "scripts": {
     "start": "sst start",
     "build": "sst build",
-    "deploy": "AWS_PROFILE=eve-tools sst deploy",
+    "deploy": "sst deploy",
     "remove": "sst remove",
     "console": "sst console",
     "typecheck": "tsc --noEmit"
