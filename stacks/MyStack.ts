@@ -11,7 +11,6 @@ export function MyStack({ stack }: StackContext) {
 
   const api = new Api(stack, "api", {
     routes: {
-      "GET /": "functions/lambda.handler",
       "POST /interactions": {
         function: {
           handler: "functions/interactions.handler",
