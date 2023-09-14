@@ -3,10 +3,6 @@ import {Duration} from "aws-cdk-lib";
 
 const {AUTH_API, IDENTITY_KEY, ESI_CLIENT_ID, AUTH_APP, JANICE_API_KEY, DISCORD_APPLICATION_ID, DISCORD_BOT_TOKEN} = process.env;
 
-if (!AUTH_API) {
-    throw new Error("Missing env vars");
-}
-
 export function Stack({ stack }: StackContext) {
 
   const api = new Api(stack, "api", {
