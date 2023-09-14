@@ -9,5 +9,5 @@ export default function (app: App) {
       format: "esm",
     },
   });
-  app.stack(Stack, { stackName: `hsbb-courier-helper-v2-$stage`});
+  app.stack(Stack, { stackName: `hsbb-courier-helper-v2-${app.stage}`});
 }
