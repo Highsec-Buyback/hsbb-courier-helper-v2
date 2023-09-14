@@ -31,6 +31,4 @@ jobs:
           aws-region: us-east-1
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
       - name: Destroy
-        run: npm run remove
-        env:
-          SUFFIX: -pr${{ github.event.pull_request.number }}
+        run: npm run remove -- --stage pr${{ github.event.pull_request.number }}

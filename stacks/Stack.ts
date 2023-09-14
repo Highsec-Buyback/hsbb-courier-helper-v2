@@ -7,11 +7,10 @@ if (!AUTH_API) {
     throw new Error("Missing env vars");
 }
 
-export function MyStack({ stack }: StackContext) {
+export function Stack({ stack }: StackContext) {
 
   const api = new Api(stack, "api", {
     routes: {
-      "GET /": "functions/lambda.handler",
       "POST /interactions": {
         function: {
           handler: "functions/interactions.handler",
