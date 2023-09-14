@@ -32,3 +32,10 @@ jobs:
         run: npm run deploy -- --stage dev
         env:
           SUFFIX: -pr${{ github.event.pull_request.number }}
+          AUTH_API: ${{ secrets.AUTH_API }}
+          AUTH_APP: ${{ secrets.AUTH_APP }}
+          DISCORD_APPLICATION_ID: ${{ secrets.DISCORD_APPLICATION_ID }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          ESI_CLIENT_ID: ${{ secrets.ESI_CLIENT_ID }}
+          IDENTITY_KEY: ${{ secrets.IDENTITY_KEY }}
+          JANICE_API_KEY: ${{ secrets.JANICE_API_KEY }}
