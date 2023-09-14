@@ -9,5 +9,5 @@ export default function (app: App) {
       format: "esm",
     },
   });
-  app.stack(MyStack);
+  app.stack(MyStack, { stackName: `MyStack${process.env.SUFFIX ?? ''}`});
 }

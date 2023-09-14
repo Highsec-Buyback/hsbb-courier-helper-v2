@@ -1,0 +1,33 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    "helpers:pinGitHubActionDigests"
+  ],
+  "rangeStrategy": "pin",
+  "transitiveRemediation": true,
+  "automerge": true,
+  "major": {
+    "dependencyDashboardApproval": true,
+    "addLabels": [
+      "major-upgrade"
+    ]
+  },
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "minor"
+      ],
+      "matchCurrentVersion": "/^[~^]?0/",
+      "dependencyDashboardApproval": true,
+      "addLabels": [
+        "major-upgrade"
+      ]
+    }
+  ],
+  "vulnerabilityAlerts": {
+    "addLabels": [
+      "security"
+    ]
+  }
+}
