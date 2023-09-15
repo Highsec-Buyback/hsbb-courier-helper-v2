@@ -19,10 +19,10 @@
     "vitest": "0.34.4"
   },
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "3.410.0",
-    "@aws-sdk/client-s3": "3.412.0",
-    "@aws-sdk/client-sqs": "3.410.0",
-    "@aws-sdk/lib-dynamodb": "3.410.0",
+    "@aws-sdk/client-dynamodb": "3.413.0",
+    "@aws-sdk/client-s3": "3.413.0",
+    "@aws-sdk/client-sqs": "3.413.0",
+    "@aws-sdk/lib-dynamodb": "3.413.0",
     "@serverless-stack/node": "1.18.4",
     "axios": "1.2.6",
     "axios-retry": "3.5.1",
