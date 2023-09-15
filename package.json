@@ -26,7 +26,7 @@
     "@serverless-stack/node": "1.18.4",
     "axios": "1.5.0",
     "axios-retry": "3.7.0",
-    "discord-interactions": "3.3.0",
+    "discord-interactions": "3.4.0",
     "ulid": "2.3.0"
   },
   "workspaces": [
