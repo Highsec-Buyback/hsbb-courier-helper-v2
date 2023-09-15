@@ -24,7 +24,7 @@
     "@aws-sdk/client-sqs": "3.413.0",
     "@aws-sdk/lib-dynamodb": "3.413.0",
     "@serverless-stack/node": "1.18.4",
-    "axios": "1.2.6",
+    "axios": "1.5.0",
     "axios-retry": "3.5.1",
     "discord-interactions": "3.3.0",
     "ulid": "2.3.0"
