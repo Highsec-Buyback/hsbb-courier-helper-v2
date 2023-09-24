@@ -1,7 +1,7 @@
 import {GetCommand, PutCommand, QueryCommand, UpdateCommand} from "@aws-sdk/lib-dynamodb";
 import {APIGatewayProxyHandlerV2} from "aws-lambda";
 import {InteractionResponseType, InteractionType, verifyKey} from 'discord-interactions';
-import {ddb} from "../libs/ddb-client";
+import {ddb, getPaginatedResults} from "../libs/ddb-client";
 import * as sqs from "@aws-sdk/client-sqs";
 import {Table} from "@serverless-stack/node/table";
 import {Queue} from "@serverless-stack/node/queue";
@@ -176,7 +176,7 @@ async function getRecords(discordData: any) {
         return response;
     } else {
 
-        const allItems: any[] = (await ddb.send(new QueryCommand({
+        const queryParams = {
             TableName: Table.CourierHelperTable.tableName,
             KeyConditionExpression: 'pk = :pk and begins_with(sk, :sk)',
             FilterExpression: 'attribute_not_exists(#used)',
@@ -187,7 +187,17 @@ async function getRecords(discordData: any) {
                 ':pk': `job#${courierType}`,
                 ':sk': `${response.id}#`,
             },
-        }))).Items ?? [];
+        };
+
+        const allItems: any[] = await getPaginatedResults(async (ExclusiveStartKey) => {
+            const queryResponse = await ddb
+                .send(new QueryCommand({ExclusiveStartKey, ...queryParams }));
+
+            return {
+                marker: queryResponse.LastEvaluatedKey,
+                results: queryResponse.Items,
+            };
+        });
 
         if (courierType === 'high_count' || courierType === 'island_high_count') {
             allItems.sort((a, b) => b.itemCount - a.itemCount);
