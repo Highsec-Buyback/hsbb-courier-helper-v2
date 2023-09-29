@@ -16,7 +16,7 @@
     "@tsconfig/node16": "16.1.1",
     "aws-cdk-lib": "2.99.0",
     "typescript": "5.2.2",
-    "vitest": "0.34.5"
+    "vitest": "0.34.6"
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "3.421.0",
