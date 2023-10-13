@@ -14,7 +14,7 @@
     "@serverless-stack/cli": "1.18.4",
     "@serverless-stack/resources": "1.18.4",
     "@tsconfig/node16": "16.1.1",
-    "aws-cdk-lib": "2.100.0",
+    "aws-cdk-lib": "2.101.0",
     "typescript": "5.2.2",
     "vitest": "0.34.6"
   },
